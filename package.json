@@ -1,0 +1,23 @@
+{
+  "name": "progaming3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tyom15/progaming3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tyom15/progaming3/issues"
+  },
+  "homepage": "https://github.com/Tyom15/progaming3#readme",
+  "dependencies": {
+    "expres": "0.0.5",
+    "express": "^4.17.3"
+  }
+}
