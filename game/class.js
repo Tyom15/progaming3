@@ -188,9 +188,12 @@ class Predator extends LivingCreature {
         var emptyCells = this.chooseCell(2);
         var newCell = random(emptyCells);
         var emptyCells1 = this.chooseCell(4);
+       
+
         var newCell1 = random(emptyCells1);
         if (newCell) {
             this.energy++
+            
 
             var newX = newCell[0];
             var newY = newCell[1];
@@ -398,7 +401,69 @@ class Snake extends LivingCreature{
     }
 }
 
+class Heart extends LivingCreature{
+    getNewCoordinates() {
+        this.directions = [
+            [this.x - 1, this.y - 1],
+            [this.x, this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y],
+            [this.x + 1, this.y],
+            [this.x - 1, this.y + 1],
+            [this.x, this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
+    }
+   
+    mul() {
+        this.multiply--;
+        var emptyCells = this.chooseCell(0);
+        var newCell = random(emptyCells);
+    
+    
+        if (newCell && this.multiply >= 8) {
+            var newX = newCell[0];
+            var newY = newCell[1];
+            matrix[newY][newX] = 6;
+            var newhr = new Heart(newX, newY);
+            heartArr.push(newhr);
+            this.multiply = 0;
+        }
+
+    }
+}
 
 
 
 
+class Fire extends LivingCreature{
+    getNewCoordinates() {
+        this.directions = [
+            [this.x - 1, this.y - 1],
+            [this.x, this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y],
+            [this.x + 1, this.y],
+            [this.x - 1, this.y + 1],
+            [this.x, this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
+    }
+   
+    mul() {
+        this.multiply--;
+        var emptyCells = this.chooseCell(0);
+        var newCell = random(emptyCells);
+    
+    
+        if (newCell && this.multiply >= 8) {
+            var newX = newCell[0];
+            var newY = newCell[1];
+            matrix[newY][newX] = 6;
+            var newfr = new Fire(newX, newY);
+            fireArr.push(newfr);
+            this.multiply = 0;
+        }
+
+    }
+}
